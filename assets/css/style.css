@@ -2,7 +2,12 @@
         font-family: bankgothic;
         src: url('../fonts/bankgothic.ttf');
     }
-    
+
+    @font-face {
+        font-family: "Pricedown";
+        src: url("../assets/fonts/Pricedown Bl.ttf") format("truetype");
+    }
+
     body {
         background: none !important;
         cursor: url('https://i.imgur.com/d9LjPxT.png'), auto;	
@@ -57,7 +62,7 @@
     .bienvenida h1 {
         color: white;
         font-size: 52px;
-        font-family: 'bankgothic';
+        font-family: 'Pricedown';
         text-align: center;
         text-shadow: 0 0 6px white;
         overflow: visible !important;
@@ -142,7 +147,7 @@
         right: -1300px;
         width: fit-content;
         float: right;
-        font-family: bankgothic;
+        font-family: Pricedown;
         animation: texto-desplazable 40s linear infinite;
     }
     
@@ -253,7 +258,7 @@
         text-align: center;
         color: white;
         line-height: 24px;
-        font-family: bankgothic;
+        font-family: Pricedown;
     }
     
     .logo {
@@ -325,7 +330,7 @@
     .character-list-header>p {
         text-align: center;
         line-height: 37px;
-        font-family: bankgothic;
+        font-family: Pricedown;
         letter-spacing: 2px;
         color: white;
         font-size: 1.3em;
@@ -337,7 +342,7 @@
         text-align: center;
         border: 1px solid #ffffff26;
         background-color: black;
-        font-family: bankgothic;
+        font-family: Pricedown;
         border-bottom: 4px solid #74aa3200;
         transition: .1s linear;
         border-radius: 5px;
@@ -378,7 +383,7 @@
     
     .character>span {
         color: rgb(255, 255, 255);
-        font-family: bankgothic;
+        font-family: Pricedown;
     }
     
     #cid {
@@ -407,7 +412,7 @@
         color: rgb(255, 255, 255);
         font-size: 19px;
         margin-top: 2vh;
-        font-family: bankgothic;
+        font-family: Pricedown;
     }
     
     #slot-name i {
@@ -434,7 +439,7 @@
         font-size: 23px;
         background-color: black;
         color: white;
-        font-family: bankgothic;
+        font-family: Pricedown;
         margin-bottom: 2vh;
         border: 1px solid #ffffff26;
         cursor: url('https://i.imgur.com/dAD9nIy.png'), auto !important;	
@@ -505,7 +510,7 @@
         color: black;
         text-align: center;
         text-transform: uppercase;
-        font-family: bankgothic;
+        font-family: Pricedown;
     }
     
     #delete {
@@ -527,7 +532,7 @@
         overflow: visible !important;
         box-shadow: 0 0 13px 4px white;
         border-radius: 5px;
-        font-family: bankgothic;
+        font-family: Pricedown;
         color: black;
         padding: 5px;
         width: 34vh;
@@ -647,7 +652,7 @@
         box-shadow: 0px 0px 19px 1px rgba(0, 0, 0, 0.54);
         text-align: center;
         color: white;
-        font-family: bankgothic;
+        font-family: Pricedown;
         overflow: visible !important;
     }
     
@@ -660,13 +665,13 @@
         text-align: center;
         font-size: 11px;
         line-height: 29px;
-        font-family: bankgothic;
+        font-family: Pricedown;
         border-bottom: 2px solid #b12424;
         overflow: visible !important;
     }
     
     .characters-delete-block-header>p {
-        font-family: bankgothic;
+        font-family: Pricedown;
         overflow: visible !important;
     }
     
@@ -721,7 +726,7 @@
         color: white;
         text-align: center;
         padding-top: 7px;
-        font-family: bankgothic;
+        font-family: Pricedown;
         overflow: visible !important;
     }
     
@@ -729,7 +734,7 @@
         color: white;
         text-align: center;
         padding-top: 7px;
-        font-family: bankgothic;
+        font-family: Pricedown;
         overflow: visible !important;
     }
     
@@ -741,7 +746,7 @@
         overflow: visible !important;
         box-shadow: 0 0 13px 4px white;
         border-radius: 5px;
-        font-family: bankgothic;
+        font-family: Pricedown;
         color: black;
         padding: 5px;
         width: 34vh;
@@ -775,7 +780,7 @@
         color: rgb(255, 255, 255);
         text-align: center;
         font-size: 1.4em;
-        font-family: bankgothic;
+        font-family: Pricedown;
         border-radius: 5px;
         padding: 13px 0;
     }
@@ -801,7 +806,7 @@
         max-width: 100%;
         padding: 0 0 7px 0;
         border-bottom: 1px solid grey;
-        font-family: bankgothic;
+        font-family: Pricedown;
         text-align: left;
         transition: all 0.2s ease-in-out;
         font-size: 1.2em;
@@ -828,7 +833,7 @@
         padding: 4px;
         border-radius: 2px 2px 4px 4px;
         border-bottom: 1px solid #4f4f4f;
-        font-family: bankgothic;
+        font-family: Pricedown;
         text-align: left;
         text-align-last: left;
         text-indent: 1px;
@@ -868,7 +873,7 @@
     
     input[type="date"] {
         color: black;
-        font-family: bankgothic;
+        font-family: Pricedown;
         text-align: left;
     }
     
@@ -893,7 +898,7 @@
     #birthdate {
         color: black;
         text-align: left;
-        font-family: bankgothic;
+        font-family: Pricedown;
     }
     
     .character-reg-btn {
@@ -912,7 +917,7 @@
         text-align: center;
         line-height: 34px;
         color: white;
-        font-family: bankgothic;
+        font-family: Pricedown;
         font-size: 13px;
     }
     
@@ -937,7 +942,7 @@
         height: 5%;
         text-align: center;
         line-height: 5vh;
-        font-family: bankgothic;
+        font-family: Pricedown;
         font-weight: bolder;
         font-size: 1.75vh;
         color: white;
@@ -963,7 +968,7 @@
         margin-right: auto;
         background-color: rgba(0, 0, 0, 0.7);
         box-shadow: 0px 0px 19px 1px rgba(0, 0, 0, 0.54);
-        font-family: bankgothic;
+        font-family: Pricedown;
         border-bottom: 4px solid #b12424;
         border-radius: 0px 0px 10px 10px;
     }
@@ -977,7 +982,7 @@
         text-align: center;
         font-size: 11px;
         line-height: 30px;
-        font-family: bankgothic;
+        font-family: Pricedown;
         border-bottom: 2px solid #b12424;
     }
     
@@ -985,7 +990,7 @@
         position: relative;
         top: 30px;
         color: rgb(255, 255, 255);
-        font-family: bankgothic;
+        font-family: Pricedown;
         margin-top: 20px;
     }
     
@@ -994,7 +999,7 @@
         font-size: 12px;
         padding-left: 10px;
         text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.35);
-        font-family: bankgothic;
+        font-family: Pricedown;
     }
     
     #log-changes {
@@ -1003,7 +1008,7 @@
         left: 30px;
         font-size: 10px;
         text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.35);
-        font-family: bankgothic;
+        font-family: Pricedown;
     }
     
     .welcomescreen {
@@ -1029,7 +1034,7 @@
         top: 45px;
         left: 20px;
         font-size: 30px;
-        font-family: bankgothic;
+        font-family: Pricedown;
         font-weight: bolder;
     }
     
@@ -1061,7 +1066,7 @@
         line-height: 3.6vh;
         color: white;
         text-transform: uppercase;
-        font-family: bankgothic;
+        font-family: Pricedown;
     }
     
     .disconnect-btn {
@@ -1085,7 +1090,7 @@
         line-height: 3.6vh;
         color: white;
         text-transform: uppercase;
-        font-family: bankgothic;
+        font-family: Pricedown;
     }
     
      ::-webkit-scrollbar-track {
@@ -1118,7 +1123,7 @@
     .loading-rondje>p {
         color: white;
         margin-top: 1vh;
-        font-family: bankgothic;
+        font-family: Pricedown;
         text-shadow: 1px 1px 0px #00000085;
     }
     
@@ -1179,7 +1184,7 @@
     }
     
     .title-screen .btn-iniciar {
-        font-family: bankgothic;
+        font-family: Pricedown;
         font-size: 1.5em;
         padding: 10px 20px;
         text-align: center;
@@ -1274,7 +1279,7 @@
     
     .titulo h1 {
         color: white;
-        font-family: 'bankgothic';
+        font-family: 'Pricedown';
         text-align: left;
         text-shadow: 0 0 6px white;
         overflow: visible !important;
@@ -1463,7 +1468,7 @@
 
         background-color: rgb(0, 0, 0);
         color: rgb(255, 255, 255);
-        font-family: bankgothic;
+        font-family: Pricedown;
         text-align: center;
         height: max-content;
         padding: 30px 0;
@@ -1503,7 +1508,7 @@
     .btn-normativa {
         background-color: rgb(0, 0, 0);
         color: rgb(255, 255, 255);
-        font-family: bankgothic;
+        font-family: Pricedown;
         text-align: center;
         height: max-content;
         float: left;
@@ -1554,7 +1559,7 @@
     .img-server h5 {
         color: white;
         text-shadow: 0 0 5px white;
-        font-family: bankgothic;
+        font-family: Pricedown;
         font-size: 2vh;
         margin-top: 1vh;
     }
@@ -1623,7 +1628,7 @@
     .titulo-eventos {
         color: white;
         font-size: 50px;
-        font-family: 'bankgothic';
+        font-family: 'Pricedown';
         text-align: center;
         text-shadow: 0 0 6px white;
         overflow: visible !important;
@@ -1643,7 +1648,7 @@
     .miembros {
         color: white;
         font-size: 1.5vh;
-        font-family: bankgothic;
+        font-family: Pricedown;
         text-shadow: 0 0 10px white;
         width: max-content;
         margin: 0 auto;
@@ -1676,7 +1681,7 @@
     .evento h5,
     .opcion h5 {
         font-size: 2vh;
-        font-family: bankgothic;
+        font-family: Pricedown;
         color: white;
     }
     
@@ -1777,7 +1782,7 @@
     .titulo-zona-servidores {
         color: white;
         font-size: 50px;
-        font-family: 'bankgothic';
+        font-family: 'Pricedown';
         text-align: center;
         text-shadow: 0 0 6px white;
         overflow: visible !important;
@@ -1872,7 +1877,7 @@
     }
     
     .categoria {
-        font-family: bankgothic !important;
+        font-family: Pricedown !important;
         color: white;
         text-shadow: 0 0 10px white;
         font-size: 1.7vh;
@@ -1886,7 +1891,7 @@
     }
     
     .seccion-comando {
-        font-family: bankgothic !important;
+        font-family: Pricedown !important;
         color: white;
         text-shadow: 0 0 10px white;
         font-size: 2.2vh;
@@ -1907,7 +1912,7 @@
     .user_profile_devs {
         background-color: rgb(0, 0, 0);
         color: rgb(255, 255, 255);
-        font-family: bankgothic;
+        font-family: Pricedown;
         text-align: center;
         height: max-content;
         float: left;
