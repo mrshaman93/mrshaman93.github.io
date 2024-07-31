@@ -5,7 +5,7 @@
 
     @font-face {
         font-family: "Pricedown";
-        src: url("../assets/fonts/Pricedown Bl.ttf") format("truetype");
+        src: url("../fonts/Pricedown Bl.ttf") format("truetype");
     }
 
     body {
