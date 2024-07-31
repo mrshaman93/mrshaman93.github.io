@@ -62,7 +62,7 @@
     .bienvenida h1 {
         color: white;
         font-size: 52px;
-        font-family: 'Pricedown';
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         text-align: center;
         text-shadow: 0 0 6px white;
         overflow: visible !important;
@@ -1279,7 +1279,7 @@
     
     .titulo h1 {
         color: white;
-        font-family: 'Pricedown';
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         text-align: left;
         text-shadow: 0 0 6px white;
         overflow: visible !important;
@@ -1628,7 +1628,7 @@
     .titulo-eventos {
         color: white;
         font-size: 50px;
-        font-family: 'Pricedown';
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         text-align: center;
         text-shadow: 0 0 6px white;
         overflow: visible !important;
@@ -1782,7 +1782,7 @@
     .titulo-zona-servidores {
         color: white;
         font-size: 50px;
-        font-family: 'Pricedown';
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         text-align: center;
         text-shadow: 0 0 6px white;
         overflow: visible !important;
