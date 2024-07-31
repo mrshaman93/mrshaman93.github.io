@@ -16,19 +16,19 @@ swipe.volume = 0.8;
 var vol = background.volume;
 var slots = 0;
 var consejos = [
-    '<div class="titulo">¡No olvides alimentarte durante tu partida!</div>La nutrición es igual de importante para ti que para tu personaje',
-    '<div class="titulo">¡Valora tu vida!</div>Recuerda que la vida de tu personaje es lo más importante. ¡Valórala!',
-    '<div class="titulo">Fair Play</div>No olvides que es importante un juego limpio para que todos los jugadores disfruten.',
-    '<div class="titulo">Control por voz</div>Recuerda configurar tu tecla de comandos por voz para poder ejecutar acciones in-game con tu voz.',
-    '<div class="titulo">Comandos de voz</div>Puedes sustituir /me por "acción" y /do por "ambiente" durante el control por voz',
-    '<div class="titulo">Comandos de voz</div>Puedes decir "Sentarse" o "Fumar" mediante los comandos por voz para que tu personaje realice la acción.',
-    '<div class="titulo">Controles</div>Puedes acceder a tu tablet personal pulsando el botón F10.'
+    '<div class="titulo">Đừng quên ăn uống trong khi chơi game!</div>Dinh dưỡng cũng quan trọng đối với bạn cũng như đối với sức khỏe của bạn.',
+    '<div class="titulo">Giá trị cuộc sống của bạn!</div>Hãy nhớ rằng cuộc sống của nhân vật của bạn là điều quan trọng nhất.',
+    '<div class="titulo">Chơi đẹp</div>Đừng quên rằng chơi đẹp là điều quan trọng để tất cả người chơi đều có thể tận hưởng.',
+    '<div class="titulo">Kiểm soát bằng giọng nói</div>Hãy nhớ định cấu hình phím lệnh thoại để bạn có thể thực hiện các hành động trong trò chơi bằng giọng nói của mình.',
+    '<div class="titulo">Lệnh thoại</div>Bạn có thể thay thế /me bằng "action" và /do bằng "ambiance" trong khi điều khiển bằng giọng nói',
+    '<div class="titulo">Lệnh thoại</div>Bạn có thể nói "Ngồi" hoặc "Hút thuốc" bằng khẩu lệnh để nhân vật của bạn thực hiện hành động.',
+    '<div class="titulo">Điều khiển</div>Bạn có thể truy cập máy tính bảng cá nhân của mình bằng cách nhấn nút F10.'
 ];
-// Quiero un timeout de 3 segundos y que cuando termine gener un consejo aletorio y lo muestre
+// Tôi muốn thời gian chờ là 3 giây và khi hoàn thành, nó sẽ tạo ra một mẹo ngẫu nhiên và hiển thị nó
 
 var intervalSlider;
 
-// on loadd windw
+// vào cửa sổ tải
 $(window).on('load', function() {
     $('.container').show();
     $(".welcomescreen").fadeIn(300);
@@ -69,7 +69,7 @@ $(document).ready(function() {
                 $.post('https://qb-multicharacter/showoffLoadingScreen');
                 console.log("Loading Screen off");
 
-                var originalText = "Cargando información del servidor";
+                var originalText = "Đang tải thông tin máy chủ";
                 var loadingProgress = 0;
                 var loadingDots = 0;
                 $("#loading-text").html(originalText);
@@ -78,15 +78,15 @@ $(document).ready(function() {
                     loadingDots++;
                     loadingProgress++;
                     if (loadingProgress == 3) {
-                        originalText = "Validando información de usuario"
+                        originalText = "Xác thực thông tin người dùng"
                         $("#loading-text").html(originalText);
                     }
                     if (loadingProgress == 4) {
-                        originalText = "Cargando información de personajes"
+                        originalText = "Đang tải thông tin nhân vật"
                         $("#loading-text").html(originalText);
                     }
                     if (loadingProgress == 6) {
-                        originalText = "Validando personajes"
+                        originalText = "Xác thực nhân vật"
                         $("#loading-text").html(originalText);
                     }
                     if (loadingDots == 4) {
@@ -100,7 +100,7 @@ $(document).ready(function() {
                     setTimeout(function() {
                         clearInterval(DotsInterval);
                         loadingProgress = 0;
-                        originalText = "Retrieving data";
+                        originalText = "Đang truy xuất dữ liệu";
                         $(".welcomescreen").fadeOut(150, function() {
                             particlesJS.load('particles-js', 'particles.json');
                             $(".videobg").show();
@@ -204,12 +204,12 @@ function setupCharInfo(cData) {
     if (cData == 'empty') {
 
         $('.character-info-valid').fadeOut(500, function() {
-            $('.character-info-valid').html('<img src="https://i.imgur.com/iPiuZZs.png"></br><div id="no-char">Este slot está vacío.<br><br>Pulsa en registrar para comenzar tu nueva historia</div>').fadeIn(500);
+            $('.character-info-valid').html('<img src="https://i.imgur.com/iPiuZZs.png"></br><div id="no-char">Vị trí này trống.<br><br>Hãy nhấn đăng ký để bắt đầu tạo nhân vật mới</div>').fadeIn(500);
 
         });
     } else {
-        var gender = "Hombre"
-        if (cData.charinfo.gender == 1) { gender = "Mujer" }
+        var gender = "Nam"
+        if (cData.charinfo.gender == 1) { gender = "Nữ" }
         $('.character-info-valid').fadeOut(500, function() {
             var fecha = cData.charinfo.birthdate.split("-");
             $('.character-info-valid').html(
@@ -267,13 +267,13 @@ $(document).on('click', '.character', function(e) {
     e.preventDefault();
 
     $("#desbloquear").css("display", "none");
-    $("#desbloquear").html('<p><i class="fas fa-coins"></i> Desbloquear slot</p>');
+    $("#desbloquear").html('<p><i class="fas fa-coins"></i> Mở khóa vị trí</p>');
     if (selectedChar === null) {
         selectedChar = $(this);
         if ((selectedChar).data('cid') == "" && selectedChar.hasClass("bloqueado") == false) {
             $(selectedChar).addClass("char-selected");
             setupCharInfo('empty')
-            $("#play-text").html('<i class="fas fa-check"></i> Crear Personaje');
+            $("#play-text").html('<i class="fas fa-check"></i> Tạo nhân vật');
             $("#play").css({ "display": "block" });
             //$("#delete").css({"display":"none"});
             $.post('https://qb-multicharacter/cDataPed', JSON.stringify({
@@ -287,13 +287,13 @@ $(document).on('click', '.character', function(e) {
             let data = $("#char-1").data('cData');
             let coins = data.money ? data.money.coins : 0
             $('.character-info-valid').fadeOut(500, function() {
-                $('.character-info-valid').html('<img src="https://i.imgur.com/O8kaEye.png"></br><div id="no-char">Este slot está bloqueado.<br><br>Puedes desbloquearlo por 50 Coins</br><div class="character-info-box-money " style="margin-top:15px;"><img src="https://i.imgur.com/C9lMtDx.png"><div class="char-info-js-money">' + coins + ' &#36; </div></div></div>').fadeIn(500);
+                $('.character-info-valid').html('<img src="https://i.imgur.com/O8kaEye.png"></br><div id="no-char">Vị trí này bị khóa.<br><br>Bạn có thể mở khóa bằng 50 Coins</br><div class="character-info-box-money " style="margin-top:15px;"><img src="https://i.imgur.com/C9lMtDx.png"><div class="char-info-js-money">' + coins + ' &#36; </div></div></div>').fadeIn(500);
             });
 
         } else {
             $(selectedChar).addClass("char-selected");
             setupCharInfo($(this).data('cData'))
-            $("#play-text").html('<i class="fas fa-sign-in-alt"></i> Comenzar');
+            $("#play-text").html('<i class="fas fa-sign-in-alt"></i> Bắt đầu');
             $("#delete-text").html("Delete");
             $("#play").css({ "display": "block" });
             //$("#delete").css({"display":"block"});
@@ -307,7 +307,7 @@ $(document).on('click', '.character', function(e) {
         if ((selectedChar).data('cid') == "" && selectedChar.hasClass("bloqueado") == false) {
             $(selectedChar).addClass("char-selected");
             setupCharInfo('empty')
-            $("#play-text").html('<i class="fas fa-check"></i> Registrar');
+            $("#play-text").html('<i class="fas fa-check"></i> Đăng ký');
             $("#play").css({ "display": "block" });
             //$("#delete").css({"display":"none"});
             $.post('https://qb-multicharacter/cDataPed', JSON.stringify({
@@ -321,13 +321,13 @@ $(document).on('click', '.character', function(e) {
             let data = $("#char-1").data('cData');
             let coins = data.money ? data.money.coins : 0
             $('.character-info-valid').fadeOut(500, function() {
-                $('.character-info-valid').html('<img src="https://i.imgur.com/O8kaEye.png"></br><div id="no-char">Este slot está bloqueado.<br><br>Puedes desbloquearlo por 50 Coins</br><div class="character-info-box-money" style="margin-top:15px;"><img src="https://i.imgur.com/C9lMtDx.png"><div class="char-info-js-money">' + coins + ' &#36; </div></div></div>').fadeIn(500);
+                $('.character-info-valid').html('<img src="https://i.imgur.com/O8kaEye.png"></br><div id="no-char">Vị trí này bị khóa.<br><br>Bạn có thể mở khóa bằng 50 Coins</br><div class="character-info-box-money" style="margin-top:15px;"><img src="https://i.imgur.com/C9lMtDx.png"><div class="char-info-js-money">' + coins + ' &#36; </div></div></div>').fadeIn(500);
             });
 
         } else {
             $(selectedChar).addClass("char-selected");
             setupCharInfo($(this).data('cData'))
-            $("#play-text").html('<i class="fas fa-sign-in-alt"></i> Elegir');
+            $("#play-text").html('<i class="fas fa-sign-in-alt"></i> Chọn');
             $("#delete-text").html("Delete");
             $("#play").css({ "display": "block" });
             //$("#delete").css({"display":"block"});
@@ -456,7 +456,7 @@ function refreshCharacters() {
         $("#play").css({ "display": "none" });
         qbMultiCharacters.resetAll();
         $(".character-register").fadeOut(300);
-        $('.characters-list').html('<div class="back-btn" id="back-home-pj"><p><i class="fas fa-undo"></i> Volver al Menú</p></div><div class="character scale-in" style="width:100%; animation-delay:0.1s;" id="char-1" data-cid=""><div id="slot-name"><i class="fas fa-plus"></i></br> Slot 1</div><span id="cid"></span></div><div class="character float-left scale-in" style="animation-delay:0.2s" id="char-2" data-cid=""><div id="slot-name"><i class="fas fa-plus"></i></br> Slot 2</div><span id="cid"></span></div><div class="character float-right scale-in" style="animation-delay:0.3s" id="char-3" data-cid=""><div id="slot-name"><i class="fas fa-plus"></i></br> Slot 3</div><span id="cid"></span></div><div class="character float-left scale-in" style="animation-delay:0.4s" id="char-4" data-cid=""><div id="slot-name"><i class="fas fa-plus"></i></br> Slot 4</div><span id="cid"></span></div><div class="character float-right scale-in" style="animation-delay:0.5s" id="char-5" data-cid=""><div id="slot-name"><i class="fas fa-plus"></i></br> Slot 5</div><span id="cid"></span></div><div class="character-btn" id="play"><p id="play-text">Seleccionar personaje</p></div><div class="character-btn" id="desbloquear"><p><i class="fas fa-coins"></i> Desbloquear slot</p></div><div class="character-btn" id="delete" style="display:none;"><p id="delete-text">Seleccionar personaje</p></div>').show();
+        $('.characters-list').html('<div class="back-btn" id="back-home-pj"><p><i class="fas fa-undo"></i> Quay lại menu</p></div><div class="character scale-in" style="width:100%; animation-delay:0.1s;" id="char-1" data-cid=""><div id="slot-name"><i class="fas fa-plus"></i></br> Slot 1</div><span id="cid"></span></div><div class="character float-left scale-in" style="animation-delay:0.2s" id="char-2" data-cid=""><div id="slot-name"><i class="fas fa-plus"></i></br> Slot 2</div><span id="cid"></span></div><div class="character float-right scale-in" style="animation-delay:0.3s" id="char-3" data-cid=""><div id="slot-name"><i class="fas fa-plus"></i></br> Slot 3</div><span id="cid"></span></div><div class="character float-left scale-in" style="animation-delay:0.4s" id="char-4" data-cid=""><div id="slot-name"><i class="fas fa-plus"></i></br> Slot 4</div><span id="cid"></span></div><div class="character float-right scale-in" style="animation-delay:0.5s" id="char-5" data-cid=""><div id="slot-name"><i class="fas fa-plus"></i></br> Slot 5</div><span id="cid"></span></div><div class="character-btn" id="play"><p id="play-text">Chọn nhân vật</p></div><div class="character-btn" id="desbloquear"><p><i class="fas fa-coins"></i> Mở khóa vị trí</p></div><div class="character-btn" id="delete" style="display:none;"><p id="delete-text">Chọn nhân vật</p></div>').show();
     }, 1000);
 
 
@@ -621,23 +621,23 @@ function bloquearSlots() {
     }
 
     if (slots == 0) {
-        $("#char-2, #char-3, #char-4, #char-5").addClass("bloqueado").html('<div id="slot-name" class="slot-muted"><i class="fas fa-ban"></i></br> Personaje bloqueado<span id="cid"></span></span>');
+        $("#char-2, #char-3, #char-4, #char-5").addClass("bloqueado").html('<div id="slot-name" class="slot-muted"><i class="fas fa-ban"></i></br> Nhân vật bị khóa<span id="cid"></span></span>');
     }
     if (slots == 1) {
-        $("#char-3, #char-4, #char-5").addClass("bloqueado").html('<div id="slot-name" class="slot-muted"><i class="fas fa-ban"></i></br> Personaje bloqueado<span id="cid"></span></span>');;
+        $("#char-3, #char-4, #char-5").addClass("bloqueado").html('<div id="slot-name" class="slot-muted"><i class="fas fa-ban"></i></br> Nhân vật bị khóa<span id="cid"></span></span>');;
     }
     if (slots == 2) {
-        $("#char-4, #char-5").addClass("bloqueado").html('<div id="slot-name" class="slot-muted"><i class="fas fa-ban"></i></br> Personaje bloqueado<span id="cid"></span></span>');;
+        $("#char-4, #char-5").addClass("bloqueado").html('<div id="slot-name" class="slot-muted"><i class="fas fa-ban"></i></br> Nhân vật bị khóa<span id="cid"></span></span>');;
     }
     if (slots == 3) {
-        $("#char-5").addClass("bloqueado").html('<div id="slot-name" class="slot-muted"><i class="fas fa-ban"></i></br> Personaje bloqueado<span id="cid"></span></span>');;
+        $("#char-5").addClass("bloqueado").html('<div id="slot-name" class="slot-muted"><i class="fas fa-ban"></i></br> Nhân vật bị khóa<span id="cid"></span></span>');;
     }
 
 }
 
 
 function desbloquearSlot() {
-    //OPERACIÓN DE COMPROBACIÓN Y RESTA DE COINS
+    //HOẠT ĐỘNG KIỂM TRA VÀ TRỪ TIỀN
     $.post('https://qb-multicharacter/unlockSlot', JSON.stringify({}), function(data) {
         if (data[0]) {
             let info = $("#char-1").data('cData');
@@ -645,12 +645,12 @@ function desbloquearSlot() {
             $('#char-1').data('cData', info)
             slots++;
             setupCharInfo('empty');
-            $("#play-text").html('<i class="fas fa-check"></i> Registrar');
+            $("#play-text").html('<i class="fas fa-check"></i> Đăng ký');
             $("#play").css({ "display": "block" });
             $("#desbloquear").css("display", "none");
             bloquearSlots();
         } else {
-            $("#desbloquear").html('<p>¡No tienes suficientes coins!</p>')
+            $("#desbloquear").html('<p>Bạn không có đủ coins!</p>')
             return false;
         }
     })
@@ -697,7 +697,7 @@ function cargarHomeScreen() {
                 $(".eventos").html('');
 
                 $(".eventos").append(`
-                <p class="sin-eventos">No hay eventos disponibles.</p>
+                <p class="sin-eventos">Không có sự kiện nào có sẵn.</p>
                 `);
             }
 
@@ -852,23 +852,23 @@ function cargarHomeScreen() {
                 }
 
                 if ($(this).attr("id") == "btn-personajes") {
-                    $(".zona-texto-descripcion").text("Accede a la Selección de Personajes donde podrás comenzar a jugar, crear tu personaje o gestionar tus slots disponibles.");
+                    $(".zona-texto-descripcion").text("Truy cập và Lựa chọn nhân vật nơi bạn có thể bắt đầu chơi, tạo nhân vật hoặc quản lý các vị trí có sẵn của mình.");
                 }
 
                 if ($(this).attr("id") == "btn-eventos") {
-                    $(".zona-texto-descripcion").text("Echa un vistazo a la lista de los eventos más recientes que vamos a celebrar.");
+                    $(".zona-texto-descripcion").text("Kiểm tra danh sách các sự kiện mới nhất chúng tôi đang tổ chức.");
                 }
 
                 if ($(this).attr("id") == "btn-normativa") {
-                    $(".zona-texto-descripcion").text("En esta sección podrás encontrar y revisar la Normativa General, la Normativa de Actos Delictivos y la Normativa de Organizaciones.");
+                    $(".zona-texto-descripcion").text("Trong phần này bạn có thể tìm và xem lại các Quy định chung, Luật và Quy định của các doanh nghiệp.");
                 }
 
                 if ($(this).attr("id") == "btn-staff") {
-                    $(".zona-texto-descripcion").text("Comprueba de un vistazo rápido que miembros de la administración se encuentran activos en este momento.");
+                    $(".zona-texto-descripcion").text("Kiểm tra nhanh xem thành viên nào của Ban quản trị hiện đang hoạt động.");
                 }
 
                 if ($(this).attr("id") == "btn-opciones") {
-                    $(".zona-texto-descripcion").text("Consulta la lista de comandos que puedes utilizar con el reconocimiento de voz");
+                    $(".zona-texto-descripcion").text("Xem danh sách các lệnh bạn có thể sử dụng với tính năng nhận dạng giọng nói");
                 }
 
                 $(".zona-descripcion").css("display", "block");
